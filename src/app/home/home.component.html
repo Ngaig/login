@@ -1,0 +1,46 @@
+<mat-toolbar color="primary">
+  <span>Home</span>
+  <span class="spacer"></span>
+  <button mat-raised-button (click)="onLogout()">Log Out</button>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-tab-group>
+    <mat-tab label="Home">
+      <mat-table #table [dataSource]="dataSource">
+
+        &lt;!&ndash;- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" &ndash;&gt;
+
+        &lt;!&ndash; ID Column &ndash;&gt;
+        <ng-container matColumnDef="someId">
+          <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+        </ng-container>
+
+        &lt;!&ndash; Progress Column &ndash;&gt;
+        <ng-container matColumnDef="progress">
+          <mat-header-cell *matHeaderCellDef> Progress </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.progress}}% </mat-cell>
+        </ng-container>
+
+        &lt;!&ndash; Name Column &ndash;&gt;
+        <ng-container matColumnDef="someFruit">
+          <mat-header-cell *matHeaderCellDef> Fruit </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+        </ng-container>
+
+        &lt;!&ndash; Color Column &ndash;&gt;
+        <ng-container matColumnDef="color">
+          <mat-header-cell *matHeaderCellDef> Color </mat-header-cell>
+          <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </mat-tab>
+    <mat-tab label="About Us">
+      <h1>This website is for demonstration purposes only.</h1>
+    </mat-tab>
+  </mat-tab-group>
+</mat-sidenav-container>

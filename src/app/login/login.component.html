@@ -1,0 +1,19 @@
+<div>
+  <mat-card>
+    <h1>Welcome to Login!</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+      <mat-form-field>
+        <input matInput class="form-control" formControlName="user" placeholder="User">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput class="form-control" formControlName="password" placeholder="Password">
+      </mat-form-field>
+      <br>
+      <button mat-raised-button color="primary" type="submit" class="btn btn-default" [disabled]="loginForm.invalid">Login</button>
+    </form>
+  </mat-card>
+</div>
+
+<!--<p>The value of name is: {{loginForm.get('user').value}}</p>
+<p>The value of password is: {{loginForm.get('password').value}}</p>-->

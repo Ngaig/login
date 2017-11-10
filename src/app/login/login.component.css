@@ -1,0 +1,11 @@
+h1 {
+  color:white;
+  text-align:center;
+}
+
+mat-card {
+  margin:75px auto;
+  text-align:center;
+  width:350px;
+  margin-top:15%;
+}
